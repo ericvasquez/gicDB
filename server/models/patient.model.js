@@ -16,6 +16,9 @@ const PatientSchema = new mongoose.Schema({
     mcStartDate: {
         type: String
     },
+    mcStartDateB: {
+        type: String
+    },
     followUpTask: {
         type: String
     },
@@ -50,7 +53,13 @@ const PatientSchema = new mongoose.Schema({
     patientZipCode: {
         type: String
     },
+    patientCounty: {
+        type: String
+    },
     patientPhoneNumber: {
+        type: String
+    },
+    patientAlternatePhoneNumber: {
         type: String
     },
     patientMedicareNumber: {
