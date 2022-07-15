@@ -44,7 +44,7 @@ export default (props) => {
 				</Col>
 			</Row>
 
-            <p>Agent Initials: {patient.agentInitials}</p>
+            <p>Agent: {patient.agentInitials}</p>
             <p>MC Start Date: {patient.mcStartDate}</p>
             <p>Follow Up Task: {patient.followUpTask}</p>
             <p>Pending Action: {patient.pendingAction}</p>
@@ -68,11 +68,6 @@ export default (props) => {
             <p>Referral Source: {patient.patientReferralSource}</p>
             <p>Referral Date: {patient.patientReferralDate}</p>
             <p>Email: {patient.patientEmail}</p>
-			{/* <p>Pet Type: {pet.petType}</p>
-			<p>Description: {pet.petDescription}</p>
-			<p>Skills: {pet.skill1}</p>
-			<p>{pet.skill2}</p>
-			<p>{pet.skill3}</p> */}
 		</Container>
 	);
 };

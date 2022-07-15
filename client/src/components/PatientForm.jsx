@@ -31,15 +31,29 @@ export default () => {
 	const [patientSSN, setPatientSSN] = useState("");
 	const [patientPlan, setPatientPlan] = useState("");
 	const [
-		patientEstimatedPlanEffectiveDate,
-		setPatientEstimatedPlanEffectiveDate,
+		patientEnrollmentDate,
+		setPatientEnrollmentDate,
+	] = useState("");
+	const [
+		patientEffectiveDate,
+		setPatientEffectiveDate,
 	] = useState("");
 	const [patientMemberId, setPatientMemberId] = useState("");
 	const [patientDoctor, setPatientDoctor] = useState("");
 	const [patientClinic, setPatientClinic] = useState("");
 	const [patientNetwork, setPatientNetwork] = useState("");
-	const [patientCaseNotes, setPatientCaseNotes] = useState("");
+	const [patientLISDate, setPatientLISDate] = useState("");
 	const [patientReferralSource, setPatientReferralSource] = useState("");
+	const [twoWeekFollowUpCall, setTwoWeekFollowUpCall] = useState("");
+	const [twoWeekFollowUpCallNotes, setTwoWeekFollowUpCallNotes] = useState("");
+	const [oneMonthFollowUpCall, setOneMonthFollowUpCall] = useState("");
+	const [oneMonthFollowUpCallNotes, setOneMonthFollowUpCallNotes] = useState("");
+	const [twoMonthFollowUpCall, setTwoMonthFollowUpCall] = useState("");
+	const [twoMonthFollowUpCallNotes, setTwoMonthFollowUpCallNotes] = useState("");
+	const [threeMonthFollowUpCall, setThreeMonthFollowUpCall] = useState("");
+	const [threeMonthFollowUpCallNotes, setThreeMonthFollowUpCallNotes] = useState("");
+	const [patientCaseNotes, setPatientCaseNotes] = useState("");
+
 	const [patientReferralDate, setPatientReferralDate] = useState("");
 	const [patientEmail, setPatientEmail] = useState("");
 
@@ -70,13 +84,23 @@ export default () => {
 				patientDateOfBirth,
 				patientSSN,
 				patientPlan,
-				patientEstimatedPlanEffectiveDate,
+				patientEnrollmentDate,
+				patientEffectiveDate,
 				patientMemberId,
 				patientDoctor,
 				patientClinic,
 				patientNetwork,
 				patientCaseNotes,
 				patientReferralSource,
+				patientLISDate,
+				twoWeekFollowUpCall,
+				twoWeekFollowUpCallNotes,
+				oneMonthFollowUpCall,
+				oneMonthFollowUpCallNotes,
+				twoMonthFollowUpCall,
+				twoMonthFollowUpCallNotes,
+				threeMonthFollowUpCall,
+				threeMonthFollowUpCallNotes,
 				patientReferralDate,
 				patientEmail,
 			})
@@ -333,43 +357,16 @@ export default () => {
 				</select>
 			</p>
 			<p>
-				<label>Follow Up Task:</label>
+				<label>Enrollment Date:</label>
 				<br />
 				<input
 					type="text"
-					onChange={(e) => setFollowUpTask(e.target.value)}
-					value={followUpTask}
+					onChange={(e) => setPatientEnrollmentDate(e.target.value)}
+					value={patientEnrollmentDate}
 				/>
 			</p>
 			<p>
-				<label>Pending Action:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPendingAction(e.target.value)}
-					value={pendingAction}
-				/>
-			</p>
-			<p>
-				<label>See MSP DB Notes:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setSeeMspDbNotes(e.target.value)}
-					value={seeMspDbNotes}
-				/>
-			</p>
-			<p>
-				<label>Estimated Plan Effective Date:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientEstimatedPlanEffectiveDate(e.target.value)}
-					value={patientEstimatedPlanEffectiveDate}
-				/>
-			</p>
-			<p>
-				<label>Member Id:</label>
+				<label>Member Plan Id:</label>
 				<br />
 				<input
 					type="text"
@@ -378,7 +375,7 @@ export default () => {
 				/>
 			</p>
 			<p>
-				<label>Doctor:</label>
+				<label>PCP:</label>
 				<br />
 				<input
 					type="text"
@@ -405,13 +402,25 @@ export default () => {
 				/>
 			</p>
 			<p>
-				<label>Case Notes:</label>
+				<label>LIS Completed:</label>
 				<br />
 				<input
 					type="text"
-					onChange={(e) => setPatientCaseNotes(e.target.value)}
-					value={patientCaseNotes}
-				/>
+					onChange={(e) => setPatientLISDate(e.target.value)}
+					value={patientLISDate}
+				/><br />
+								<label>Initial:</label>
+			
+				<select
+					value={agentInitials}
+					onChange={(e) => setAgentInitials(e.target.value)}>
+					<option value=""></option>
+					<option value="Belinda Perez">Belinda Perez</option>
+					<option value="Gilda Castano">Gilda Castano</option>
+					<option value="Joann Garza">Joann Garza</option>
+					<option value="Lisa Streeter">Lisa Streeter</option>
+					<option value="Other">Other</option>
+				</select>
 			</p>
 			<p>
 				<label>Referral Source:</label>
@@ -422,43 +431,74 @@ export default () => {
 					value={patientReferralSource}
 				/>
 			</p>
+
 			<p>
-				<label>Referral Date:</label>
-				<br />
+				<label>2 Week Follow Up Call:</label>
 				<input
 					type="text"
-					onChange={(e) => setPatientReferralDate(e.target.value)}
-					value={patientReferralDate}
+					onChange={(e) => setTwoWeekFollowUpCall(e.target.value)}
+					value={twoWeekFollowUpCall}
+				/>
+				<label>Notes:</label>
+				<input
+					type="text"
+					onChange={(e) => setTwoWeekFollowUpCallNotes(e.target.value)}
+					value={twoWeekFollowUpCallNotes}
+				/>
+			</p>
+			<p>
+				<label>30 Day Follow Up Call:</label>
+				<input
+					type="text"
+					onChange={(e) => setOneMonthFollowUpCall(e.target.value)}
+					value={oneMonthFollowUpCall}
+				/>
+				<label>Notes:</label>
+				<input
+					type="text"
+					onChange={(e) => setOneMonthFollowUpCallNotes(e.target.value)}
+					value={oneMonthFollowUpCallNotes}
+				/>
+			</p>
+			<p>
+				<label>60 Day Follow Up Call:</label>
+				<input
+					type="text"
+					onChange={(e) => setTwoMonthFollowUpCall(e.target.value)}
+					value={twoMonthFollowUpCall}
+				/>
+				<label>Notes:</label>
+				<input
+					type="text"
+					onChange={(e) => setTwoMonthFollowUpCallNotes(e.target.value)}
+					value={twoMonthFollowUpCallNotes}
+				/>
+			</p>
+			<p>
+				<label>90 Day Follow Up Call:</label>
+				<input
+					type="text"
+					onChange={(e) => setThreeMonthFollowUpCall(e.target.value)}
+					value={threeMonthFollowUpCall}
+				/>
+				<label>Notes:</label>
+				<input
+					type="text"
+					onChange={(e) => setThreeMonthFollowUpCallNotes(e.target.value)}
+					value={threeMonthFollowUpCallNotes}
+				/>
+			</p>
+			<p>
+				<label>Case Notes:</label>
+				<br />
+				<textarea
+					type="text"
+					onChange={(e) => setPatientCaseNotes(e.target.value)}
+					value={patientCaseNotes}
 				/>
 			</p>
 
-			{/* <p>
-				<label>Skill 1:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setSkill1(e.target.value)}
-					value={skill1}
-				/>
-			</p>
-			<p>
-				<label>Skill 2:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setSkill2(e.target.value)}
-					value={skill2}
-				/>
-			</p>
-			<p>
-				<label>Skill 3:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setSkill3(e.target.value)}
-					value={skill3}
-				/>
-			</p> */}
+
 
 			<input type="submit" className="btn btn-primary" value="Add Patient" />
 		</form>

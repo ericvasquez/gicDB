@@ -74,7 +74,10 @@ const PatientSchema = new mongoose.Schema({
     patientPlan: {
         type: String
     },
-    patientEstimatedPlanEffectiveDate: {
+    patientEnrollmentDate: {
+        type: String
+    },
+    patientEffectiveDate: {
         type: String
     },
     patientMemberId: {
@@ -93,6 +96,33 @@ const PatientSchema = new mongoose.Schema({
         type: String
     },
     patientReferralSource: {
+        type: String
+    },
+    patientLISDate: {
+        type: String
+    },
+    twoWeekFollowUpCall: {
+        type: String
+    },
+    twoWeekFollowUpCallNotes: {
+        type: String
+    },
+    oneMonthFollowUpCall: {
+        type: String
+    },
+    oneMonthFollowUpCallNotes: {
+        type: String
+    },
+    twoMonthFollowUpCall: {
+        type: String
+    },
+    twoMonthFollowUpCallNotes: {
+        type: String
+    },
+    threeMonthFollowUpCall: {
+        type: String
+    },
+    threeMonthFollowUpCallNotes: {
         type: String
     },
     patientReferralDate: {
