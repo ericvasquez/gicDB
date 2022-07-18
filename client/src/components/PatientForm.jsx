@@ -25,19 +25,16 @@ export default () => {
 	const [patientZipCode, setPatientZipCode] = useState("");
 	const [patientCounty, setPatientCounty] = useState("");
 	const [patientPhoneNumber, setPatientPhoneNumber] = useState("");
-	const [patientAlternatePhoneNumber, setPatientAlternatePhoneNumber] = useState("");
+	const [
+		patientAlternatePhoneNumber,
+		setPatientAlternatePhoneNumber,
+	] = useState("");
 	const [patientMedicareNumber, setPatientMedicareNumber] = useState("");
 	const [patientDateOfBirth, setPatientDateOfBirth] = useState("");
 	const [patientSSN, setPatientSSN] = useState("");
 	const [patientPlan, setPatientPlan] = useState("");
-	const [
-		patientEnrollmentDate,
-		setPatientEnrollmentDate,
-	] = useState("");
-	const [
-		patientEffectiveDate,
-		setPatientEffectiveDate,
-	] = useState("");
+	const [patientEnrollmentDate, setPatientEnrollmentDate] = useState("");
+	const [patientEffectiveDate, setPatientEffectiveDate] = useState("");
 	const [patientMemberId, setPatientMemberId] = useState("");
 	const [patientDoctor, setPatientDoctor] = useState("");
 	const [patientClinic, setPatientClinic] = useState("");
@@ -47,11 +44,18 @@ export default () => {
 	const [twoWeekFollowUpCall, setTwoWeekFollowUpCall] = useState("");
 	const [twoWeekFollowUpCallNotes, setTwoWeekFollowUpCallNotes] = useState("");
 	const [oneMonthFollowUpCall, setOneMonthFollowUpCall] = useState("");
-	const [oneMonthFollowUpCallNotes, setOneMonthFollowUpCallNotes] = useState("");
+	const [oneMonthFollowUpCallNotes, setOneMonthFollowUpCallNotes] = useState(
+		"",
+	);
 	const [twoMonthFollowUpCall, setTwoMonthFollowUpCall] = useState("");
-	const [twoMonthFollowUpCallNotes, setTwoMonthFollowUpCallNotes] = useState("");
+	const [twoMonthFollowUpCallNotes, setTwoMonthFollowUpCallNotes] = useState(
+		"",
+	);
 	const [threeMonthFollowUpCall, setThreeMonthFollowUpCall] = useState("");
-	const [threeMonthFollowUpCallNotes, setThreeMonthFollowUpCallNotes] = useState("");
+	const [
+		threeMonthFollowUpCallNotes,
+		setThreeMonthFollowUpCallNotes,
+	] = useState("");
 	const [patientCaseNotes, setPatientCaseNotes] = useState("");
 	const [patientReferralDate, setPatientReferralDate] = useState("");
 	const [patientEmail, setPatientEmail] = useState("");
@@ -73,22 +77,40 @@ export default () => {
 	const [mspConfirmedDateInitials, setMspConfirmedDateInitials] = useState("");
 	const [mspDaysFromFaxDate, setMspDaysFromFaxDate] = useState("");
 	const [mspTwoWeekFUDate, setMspTwoWeekFUDate] = useState("");
-	const [mspTwoWeekFUDateCompleted, setMspTwoWeekFUDateCompleted] = useState("");
-	const [mspTwoWeekFUDateCompletedInitials, setMspTwoWeekFUDateCompletedInitials] = useState("");
+	const [mspTwoWeekFUDateCompleted, setMspTwoWeekFUDateCompleted] = useState(
+		"",
+	);
+	const [
+		mspTwoWeekFUDateCompletedInitials,
+		setMspTwoWeekFUDateCompletedInitials,
+	] = useState("");
 	const [mspFourWeekFUDate, setMspFourWeekFUDate] = useState("");
-	const [mspFourWeekFUDateCompleted, setMspFourWeekFUDateCompleted] = useState("");
-	const [mspFourWeekFUDateCompletedInitials, setMspFourWeekFUDateCompletedInitials] = useState("");
+	const [mspFourWeekFUDateCompleted, setMspFourWeekFUDateCompleted] = useState(
+		"",
+	);
+	const [
+		mspFourWeekFUDateCompletedInitials,
+		setMspFourWeekFUDateCompletedInitials,
+	] = useState("");
 	const [mspSixWeekFUDate, setMspSixWeekFUDate] = useState("");
-	const [mspSixWeekFUDateCompleted, setMspSixWeekFUDateCompleted] = useState("");
-	const [mspSixWeekFUDateCompletedInitials, setMspSixWeekFUDateCompletedInitials] = useState("");
+	const [mspSixWeekFUDateCompleted, setMspSixWeekFUDateCompleted] = useState(
+		"",
+	);
+	const [
+		mspSixWeekFUDateCompletedInitials,
+		setMspSixWeekFUDateCompletedInitials,
+	] = useState("");
 	const [mspLetterRecievedDate, setMspLetterRecievedDate] = useState("");
-	const [mspLetterRecievedInitials, setMspLetterRecievedInitials] = useState("");
+	const [mspLetterRecievedInitials, setMspLetterRecievedInitials] = useState(
+		"",
+	);
 	const [mspFaxedInsurance, setMspFaxedInsurance] = useState("");
-	const [mspFaxedInsuranceInitials, setMspFaxedInsuranceInitials] = useState("");
+	const [mspFaxedInsuranceInitials, setMspFaxedInsuranceInitials] = useState(
+		"",
+	);
 	const [mspLetterToAgent, setMspLetterToAgent] = useState("");
 	const [mspLetterToAgentInitials, setMspLetterToAgentInitials] = useState("");
 	const [mspNotes, setMspNotes] = useState("");
-
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
@@ -168,7 +190,7 @@ export default () => {
 				mspFaxedInsuranceInitials,
 				mspLetterToAgent,
 				mspLetterToAgentInitials,
-				mspNotes
+				mspNotes,
 			})
 			.then((res) => {
 				if (res.data.error) {
@@ -193,218 +215,229 @@ export default () => {
 			))}
 			<Link to={`/api/patients`}>back to home</Link>
 			<h1>Add New</h1>
-			<p>
-				<label>Date:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setInitialDate(e.target.value)}
-					value={initialDate}
-				/>
-			</p>
-			<p>
-				<label>Agent:</label>
-				<br />
-				{/* <input
-					type="text"
-					onChange={(e) => setAgentInitials(e.target.value)}
-					value={agentInitials}
-				/> */}
-				<select
-					value={agentInitials}
-					onChange={(e) => setAgentInitials(e.target.value)}>
-					<option value=""></option>
-					<option value="Belinda Perez">Belinda Perez</option>
-					<option value="Gilda Castano">Gilda Castano</option>
-					<option value="Joann Garza">Joann Garza</option>
-					<option value="Lisa Streeter">Lisa Streeter</option>
-					<option value="Other">Other</option>
-				</select>
-			</p>
-			<p>
-				<label>Client Status:</label>
-				<br />
-				<select
-					value={patientStatus}
-					onChange={(e) => setPatientStatus(e.target.value)}>
-					<option value=""></option>
-					<option value="Active">Active</option>
-					<option value="Inactive">Inactive</option>
-					<option value="Deceased">Deceased</option>
-					<option value="Potential">Potential</option>
-				</select>
-			</p>
-			<p>
-				<label>Type:</label>
-				<br />
-				<select
-					value={patientType}
-					onChange={(e) => setPatientType(e.target.value)}>
-					<option value=""></option>
-					<option value="New">New</option>
-					<option value="Flip">Flip</option>
-					<option value="GIC Flip">GIC Flip</option>
-				</select>
-			</p>
-			<p>
-				<label>Last Name:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientLastName(e.target.value)}
-					value={patientLastName}
-				/>
-			</p>
-			<p>
-				<label>First Name:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientFirstName(e.target.value)}
-					value={patientFirstName}
-				/>
-			</p>
-			<p>
-				<label>Middle Name:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientMiddleName(e.target.value)}
-					value={patientMiddleName}
-				/>
-			</p>
-			<p>
-				<label>Date Of Birth:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientDateOfBirth(e.target.value)}
-					value={patientDateOfBirth}
-				/>
-			</p>
-			<p>
-				<label>Gender:</label>
-				<br />
-				<select
-					value={patientGender}
-					onChange={(e) => setPatientGender(e.target.value)}>
-					<option value=""></option>
-					<option value="F">F</option>
-					<option value="M">M</option>
-				</select>
-			</p>
-			<p>
-				<label>Address:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientStreetAddress(e.target.value)}
-					value={patientStreetAddress}
-				/>
-			</p>
-			<p>
-				<label>City:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientCity(e.target.value)}
-					value={patientCity}
-				/>
-			</p>
-			<p>
-				<label>Zip Code:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientZipCode(e.target.value)}
-					value={patientZipCode}
-				/>
-			</p>
-			<p>
-				<label>County:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientCounty(e.target.value)}
-					value={patientCounty}
-				/>
-			</p>
-			<p>
-				<label>Phone Number:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientPhoneNumber(e.target.value)}
-					value={patientPhoneNumber}
-				/>
-			</p>
-			<p>
-				<label>Alternate Phone Number:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientAlternatePhoneNumber(e.target.value)}
-					value={patientAlternatePhoneNumber}
-				/>
-			</p>
-			<p>
-				<label>Email:</label>
-				<br />
-				<input
-					type="text"
-					onChange={(e) => setPatientEmail(e.target.value)}
-					value={patientEmail}
-				/>
-			</p>
-			<p>
-				<label>SSN:</label>
+			<div class="row g-2">
+				<div class="col-md-3">
+					<label>Date</label>
+					<br></br>
+					<input
+						type="text"
+						onChange={(e) => setInitialDate(e.target.value)}
+						value={initialDate}
+					/>
+				</div>
+				<div class="col-md-3">
+					<label>Agent</label>
+					<br></br>
+					<select
+						value={agentInitials}
+						onChange={(e) => setAgentInitials(e.target.value)}>
+						<option value=""></option>
+						<option value="Belinda Perez">Belinda Perez</option>
+						<option value="Gilda Castano">Gilda Castano</option>
+						<option value="Joann Garza">Joann Garza</option>
+						<option value="Lisa Streeter">Lisa Streeter</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<label>Client Status</label>
+					<br />
+					<select
+						value={patientStatus}
+						onChange={(e) => setPatientStatus(e.target.value)}>
+						<option value=""></option>
+						<option value="Active">Active</option>
+						<option value="Inactive">Inactive</option>
+						<option value="Deceased">Deceased</option>
+						<option value="Potential">Potential</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<label>Type</label>
+					<br />
+					<select
+						value={patientType}
+						onChange={(e) => setPatientType(e.target.value)}>
+						<option value=""></option>
+						<option value="New">New</option>
+						<option value="Flip">Flip</option>
+						<option value="GIC Flip">GIC Flip</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col-md-3">
+					<label>Last Name</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientLastName(e.target.value)}
+						value={patientLastName}
+					/>
+				</div>
+				<div class="col">
+					<label>First Name</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientFirstName(e.target.value)}
+						value={patientFirstName}
+					/>
+				</div>
+				<div class="col">
+					<label>Middle Name</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientMiddleName(e.target.value)}
+						value={patientMiddleName}
+					/>
+				</div>
+				<div class="col">
+					<label>DOB</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientDateOfBirth(e.target.value)}
+						value={patientDateOfBirth}
+					/>
+				</div>
+				<div class="col">
+					<label>Gender</label>
+					<br />
+					<select
+						value={patientGender}
+						onChange={(e) => setPatientGender(e.target.value)}>
+						<option value=""></option>
+						<option value="F">F</option>
+						<option value="M">M</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col">
+					<label>Address</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientStreetAddress(e.target.value)}
+						value={patientStreetAddress}
+					/>
+				</div>
+				<div class="col">
+					<label>City</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientCity(e.target.value)}
+						value={patientCity}
+					/>
+				</div>
+				<div class="col">
+					<label>Zip</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientZipCode(e.target.value)}
+						value={patientZipCode}
+					/>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col-md-4">
+					<label>County</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientCounty(e.target.value)}
+						value={patientCounty}
+					/>
+				</div>
+				<div class="col-md-4">
+					<label>Phone Number</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientPhoneNumber(e.target.value)}
+						value={patientPhoneNumber}
+					/>
+				</div>
+				<div class="col-md-4">
+					<label>Alternate Phone Number</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientAlternatePhoneNumber(e.target.value)}
+						value={patientAlternatePhoneNumber}
+					/>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div>
+					<label>Email</label>
+					<br />
+					<input
+						type="text"
+						onChange={(e) => setPatientEmail(e.target.value)}
+						value={patientEmail}
+					/>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col">
+				<label>SS#</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientSSN(e.target.value)}
 					value={patientSSN}
 				/>
-			</p>
-			<p>
-				<label>Medicare #:</label>
+				</div>
+				<div class="col">
+				<label>Medicare #</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientMedicareNumber(e.target.value)}
 					value={patientMedicareNumber}
 				/>
-			</p>
-			<p>
-				<label>MC Start Date Part A:</label>
+				</div>
+				<div class="col">
+				<label>MC Start Date Part A</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setMcStartDate(e.target.value)}
 					value={mcStartDate}
 				/>
-			</p>
-			<p>
-				<label>MC Start Date Part B:</label>
+				</div>
+				<div class="col">
+				<label>MC Start Date Part B</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setMcStartDateB(e.target.value)}
 					value={mcStartDateB}
 				/>
-			</p>
-			<p>
-				<label>Plan:</label>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col">
+				<label>Plan</label>
 				<br />
-				{/* <input
-					type="text"
-					onChange={(e) => setPatientPlan(e.target.value)}
-					value={patientPlan}
-				/> */}
 				<select
 					value={patientPlan}
 					onChange={(e) => setPatientPlan(e.target.value)}>
 					<option value="AARP MA HMO">AARP MA HMO</option>
-					<option value="AARP MA Secure Horizon HMO">AARP MA Secure Horizon HMO</option>
+					<option value="AARP MA Secure Horizon HMO">
+						AARP MA Secure Horizon HMO
+					</option>
 					<option value="UHC MA Dual HMO">UHC MA Dual HMO</option>
 					<option value="UHC MA Chronic HMO">UHC MA Chronic HMO</option>
 					<option value="UHC MA Patriot HMO">UHC MA Patriot HMO</option>
@@ -414,157 +447,183 @@ export default () => {
 					<option value="UHC MA Gold RPPO">UHC MA Gold RPPO</option>
 					<option value="UHC MA Silver RPPO">UHC MA Silver RPPO</option>
 					<option value="Humana Gold Plus HMO">Humana Gold Plus HMO</option>
-					<option value="Humana Gold Plus HMO D-SNP">Humana Gold Plus HMO D-SNP</option>
-					<option value="Humana Gold Plus Heart & Diabetes HMO">Humana Gold Plus Heart & Diabetes HMO</option>
+					<option value="Humana Gold Plus HMO D-SNP">
+						Humana Gold Plus HMO D-SNP
+					</option>
+					<option value="Humana Gold Plus Heart & Diabetes HMO">
+						Humana Gold Plus Heart & Diabetes HMO
+					</option>
 					<option value="Humana Choice PPO">Humana Choice PPO</option>
 					<option value="Humana RPPO">Humana RPPO</option>
 					<option value="Humana Honor PPO">Humana Honor PPO</option>
-					<option value=""></option>
 				</select>
-			</p>
-			<p>
-				<label>Enrollment Date:</label>
+				</div>
+				<div class="col">
+				<label>Enrollment Date</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientEnrollmentDate(e.target.value)}
 					value={patientEnrollmentDate}
 				/>
-			</p>
-			<p>
-				<label>Member Plan Id:</label>
+				</div>
+				<div class="col">
+				<label>Effective Date</label>
+				<br />
+				<input
+					type="text"
+					onChange={(e) => setPatientEffectiveDate(e.target.value)}
+					value={patientEffectiveDate}
+				/>
+				</div>
+				<div class="col">
+				<label>Member Plan ID</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientMemberId(e.target.value)}
 					value={patientMemberId}
 				/>
-			</p>
-			<p>
-				<label>PCP:</label>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col md-4">
+				<label>PCP</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientDoctor(e.target.value)}
 					value={patientDoctor}
 				/>
-			</p>
-			<p>
-				<label>Clinic:</label>
+				</div>
+				<div class="col md-4">
+				<label>Clinic</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientClinic(e.target.value)}
 					value={patientClinic}
 				/>
-			</p>
-			<p>
-				<label>Network:</label>
+				</div>
+				<div class="col md-4">
+				<label>Network</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientNetwork(e.target.value)}
 					value={patientNetwork}
 				/>
-			</p>
-			<p>
-				<label>LIS Completed:</label>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col">
+				<label>LIS Completed</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientLISDate(e.target.value)}
 					value={patientLISDate}
-				/><br />
-								<label>Initial:</label>
-			
-				<select
-					value={agentInitials}
-					onChange={(e) => setAgentInitials(e.target.value)}>
-					<option value=""></option>
-					<option value="Belinda Perez">Belinda Perez</option>
-					<option value="Gilda Castano">Gilda Castano</option>
-					<option value="Joann Garza">Joann Garza</option>
-					<option value="Lisa Streeter">Lisa Streeter</option>
-					<option value="Other">Other</option>
-				</select>
-			</p>
-			<p>
-				<label>Referral Source:</label>
+				/>
+				</div>
+				<div class="col">
+				<label>Initial</label>
+<br></br>
+<select
+	value={agentInitials}
+	onChange={(e) => setAgentInitials(e.target.value)}>
+	<option value=""></option>
+	<option value="Belinda Perez">Belinda Perez</option>
+	<option value="Gilda Castano">Gilda Castano</option>
+	<option value="Joann Garza">Joann Garza</option>
+	<option value="Lisa Streeter">Lisa Streeter</option>
+	<option value="Other">Other</option>
+</select>
+				</div>
+				<div class="col">
+				<label>Referral Source</label>
 				<br />
 				<input
 					type="text"
 					onChange={(e) => setPatientReferralSource(e.target.value)}
 					value={patientReferralSource}
 				/>
-			</p>
+				</div>
+			</div>
 
-			<p>
-				<label>2 Week Follow Up Call:</label>
+			<div class="row g-2">
+				<div class="col-6">
+				<label>2 Week Follow Up Call</label>
 				<input
 					type="text"
 					onChange={(e) => setTwoWeekFollowUpCall(e.target.value)}
 					value={twoWeekFollowUpCall}
 				/>
-				<label>Notes:</label>
+				<label>Notes</label>
 				<input
 					type="text"
 					onChange={(e) => setTwoWeekFollowUpCallNotes(e.target.value)}
 					value={twoWeekFollowUpCallNotes}
 				/>
-			</p>
-			<p>
-				<label>30 Day Follow Up Call:</label>
+				</div>
+				<div class="col-6">
+				<label>30 Day Follow Up Call</label>
 				<input
 					type="text"
 					onChange={(e) => setOneMonthFollowUpCall(e.target.value)}
 					value={oneMonthFollowUpCall}
 				/>
-				<label>Notes:</label>
+				<label>Notes</label>
 				<input
 					type="text"
 					onChange={(e) => setOneMonthFollowUpCallNotes(e.target.value)}
 					value={oneMonthFollowUpCallNotes}
 				/>
-			</p>
-			<p>
-				<label>60 Day Follow Up Call:</label>
+				</div>
+			</div>
+			<div class="row g-2">
+				<div class="col-6">
+				<label>60 Day Follow Up Call</label>
 				<input
 					type="text"
 					onChange={(e) => setTwoMonthFollowUpCall(e.target.value)}
 					value={twoMonthFollowUpCall}
 				/>
-				<label>Notes:</label>
+				<label>Notes</label>
 				<input
 					type="text"
 					onChange={(e) => setTwoMonthFollowUpCallNotes(e.target.value)}
 					value={twoMonthFollowUpCallNotes}
 				/>
-			</p>
-			<p>
-				<label>90 Day Follow Up Call:</label>
+				</div>
+				<div class="col-6">
+				<label>90 Day Follow Up Call</label>
 				<input
 					type="text"
 					onChange={(e) => setThreeMonthFollowUpCall(e.target.value)}
 					value={threeMonthFollowUpCall}
 				/>
-				<label>Notes:</label>
+				<label>Notes</label>
 				<input
 					type="text"
 					onChange={(e) => setThreeMonthFollowUpCallNotes(e.target.value)}
 					value={threeMonthFollowUpCallNotes}
 				/>
-			</p>
-			<p>
-				<label>Case Notes:</label>
+				</div>
+			</div>
+
+			<div class="row g-2">
+				<div class="col">
+				<label>Case Notes</label>
 				<br />
 				<textarea
 					type="text"
 					onChange={(e) => setPatientCaseNotes(e.target.value)}
 					value={patientCaseNotes}
 				/>
-			</p>
-
-
+				</div>
+			</div>
 
 			<input type="submit" className="btn btn-primary" value="Add Patient" />
 		</form>
