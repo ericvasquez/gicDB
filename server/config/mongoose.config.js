@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-// mongoose.connect("mongodb://localhost/gic_patient_db", { 
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true,
-// })
+mongoose.connect("mongodb://localhost/gic_patient_db", { 
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+})
 
 //Added
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });	
+// mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });	
 	
 /* mongoose.connect("mongodb+srv://user13:user13@cluster0.udwtc.mongodb.net/myFirstDatabase" , { 
 	useNewUrlParser: true,
