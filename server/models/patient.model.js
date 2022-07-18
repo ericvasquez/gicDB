@@ -131,6 +131,105 @@ const PatientSchema = new mongoose.Schema({
     patientEmail: {
         type: String
     },
+    mspStaffNotes: {
+        type: String
+    },
+    mspDateAdded: {
+        type: String
+    },
+    mspStatus: {
+        type: String
+    },
+    mspLevel: {
+        type: String
+    },
+    mspCaseNumber: {
+        type: String
+    },
+    mspStartDate: {
+        type: String
+    },
+    mspEndDate: {
+        type: String
+    },
+    mspQMBNumber: {
+        type: String
+    },
+    mspEDGNumber: {
+        type: String
+    },
+    mspPendingAction: {
+        type: String
+    },
+    mspColorCode: {
+        type: String
+    },
+    mspNewRenewal: {
+        type: String
+    },
+    mspFaxedtoTHHSDate: {
+        type: String
+    },
+    mspFaxedtoTHHSInitials: {
+        type: String
+    },
+    mspConfirmedDate: {
+        type: String
+    },
+    mspConfirmedInitials: {
+        type: String
+    },
+    mspDaysFromFaxDate: {
+        type: String
+    },
+    mspTwoWeekFUDate: {
+        type: String
+    },
+    mspTwoWeekFUDateCompleted: {
+        type: String
+    },
+    mspTwoWeekFUDateCompletedInitials: {
+        type: String
+    },
+    mspFourWeekFUDate: {
+        type: String
+    },
+    mspFourWeekFUDateCompleted: {
+        type: String
+    },
+    mspFourWeekFUDateCompletedInitials: {
+        type: String
+    },
+    mspSixWeekFUDate: {
+        type: String
+    },
+    mspSixWeekFUDateCompleted: {
+        type: String
+    },
+    mspSixWeekFUDateCompletedInitials: {
+        type: String
+    },
+    mspLetterRecievedDate: {
+        type: String
+    },
+    mspLetterRecievedInitials: {
+        type: String
+    },
+    mspFaxedInsurance: {
+        type: String
+    },
+    mspFaxedInsuranceInitials: {
+        type: String
+    },
+    mspLetterToAgent: {
+        type: String
+    },
+    mspLetterToAgentInitials: {
+        type: String
+    },
+    mspNotes: {
+        type: String
+    },
 
 }, { timestamps: true });
 
