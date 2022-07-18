@@ -53,9 +53,41 @@ export default () => {
 	const [threeMonthFollowUpCall, setThreeMonthFollowUpCall] = useState("");
 	const [threeMonthFollowUpCallNotes, setThreeMonthFollowUpCallNotes] = useState("");
 	const [patientCaseNotes, setPatientCaseNotes] = useState("");
-
 	const [patientReferralDate, setPatientReferralDate] = useState("");
 	const [patientEmail, setPatientEmail] = useState("");
+	const [mspStaffNotes, setMspStaffNotes] = useState("");
+	const [mspDateAdded, setMspDateAdded] = useState("");
+	const [mspStatus, setMspStatus] = useState("");
+	const [mspLevel, setMspLevel] = useState("");
+	const [mspCaseNumber, setMspCaseNumber] = useState("");
+	const [mspStartDate, setMspStartDate] = useState("");
+	const [mspEndDate, setMspEndDate] = useState("");
+	const [mspQMBNumber, setMspQMBNumber] = useState("");
+	const [mspPendingAction, setMspPendingAction] = useState("");
+	const [mspColorCode, setMspColorCode] = useState("");
+	const [mspNewRenewal, setMspNewRenewal] = useState("");
+	const [mspFaxedtoTHHSDate, setMspFaxedtoTHHSDate] = useState("");
+	const [mspFaxedtoTHHSInitials, setMspFaxedtoTHHSInitials] = useState("");
+	const [mspConfirmedDate, setMspConfirmedDate] = useState("");
+	const [mspConfirmedDateInitials, setMspConfirmedDateInitials] = useState("");
+	const [mspDaysFromFaxDate, setMspDaysFromFaxDate] = useState("");
+	const [mspTwoWeekFUDate, setMspTwoWeekFUDate] = useState("");
+	const [mspTwoWeekFUDateCompleted, setMspTwoWeekFUDateCompleted] = useState("");
+	const [mspTwoWeekFUDateCompletedInitials, setMspTwoWeekFUDateCompletedInitials] = useState("");
+	const [mspFourWeekFUDate, setMspFourWeekFUDate] = useState("");
+	const [mspFourWeekFUDateCompleted, setMspFourWeekFUDateCompleted] = useState("");
+	const [mspFourWeekFUDateCompletedInitials, setMspFourWeekFUDateCompletedInitials] = useState("");
+	const [mspSixWeekFUDate, setMspSixWeekFUDate] = useState("");
+	const [mspSixWeekFUDateCompleted, setMspSixWeekFUDateCompleted] = useState("");
+	const [mspSixWeekFUDateCompletedInitials, setMspSixWeekFUDateCompletedInitials] = useState("");
+	const [mspLetterRecieved, setMspLetterRecieved] = useState("");
+	const [mspLetterRecievedInitials, setMspLetterRecievedInitials] = useState("");
+	const [mspFaxedInsurance, setMspFaxedInsurance] = useState("");
+	const [mspFaxedInsuranceInitials, setMspFaxedInsuranceInitials] = useState("");
+	const [mspLetterToAgent, setMspLetterToAgent] = useState("");
+	const [mspLetterToAgentInitials, setMspLetterToAgentInitials] = useState("");
+	const [mspNotes, setMspNotes] = useState("");
+
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
@@ -103,6 +135,39 @@ export default () => {
 				threeMonthFollowUpCallNotes,
 				patientReferralDate,
 				patientEmail,
+				mspStaffNotes,
+				mspDateAdded,
+				mspStatus,
+				mspLevel,
+				mspCaseNumber,
+				mspStartDate,
+				mspEndDate,
+				mspQMBNumber,
+				mspEDGNumber,
+				mspPendingAction,
+				mspColorCode,
+				mspNewRenewal,
+				mspFaxedtoTHHSDate,
+				mspFaxedtoTHHSInitials,
+				mspConfirmedDate,
+				mspConfirmedInitials,
+				mspDaysFromFaxDate,
+				mspTwoWeekFUDate,
+				mspTwoWeekFUDateCompleted,
+				mspTwoWeekFUDateCompletedInitials,
+				mspFourWeekFUDate,
+				mspFourWeekFUDateCompleted,
+				mspFourWeekFUDateCompletedInitials,
+				mspSixWeekFUDate,
+				mspSixWeekFUDateCompleted,
+				mspSixWeekFUDateCompletedInitials,
+				mspLetterRecievedDate,
+				mspLetterRecievedInitials,
+				mspFaxedInsurance,
+				mspFaxedInsuranceInitials,
+				mspLetterToAgent,
+				mspLetterToAgentInitials,
+				mspNotes
 			})
 			.then((res) => {
 				if (res.data.error) {
