@@ -176,7 +176,7 @@ const PatientSchema = new mongoose.Schema({
     mspConfirmedDate: {
         type: String
     },
-    mspConfirmedInitials: {
+    mspConfirmedDateInitials: {
         type: String
     },
     mspDaysFromFaxDate: {

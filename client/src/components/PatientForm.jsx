@@ -63,6 +63,7 @@ export default () => {
 	const [mspStartDate, setMspStartDate] = useState("");
 	const [mspEndDate, setMspEndDate] = useState("");
 	const [mspQMBNumber, setMspQMBNumber] = useState("");
+	const [mspEDGNumber, setMspEDGNumber] = useState("");
 	const [mspPendingAction, setMspPendingAction] = useState("");
 	const [mspColorCode, setMspColorCode] = useState("");
 	const [mspNewRenewal, setMspNewRenewal] = useState("");
@@ -80,7 +81,7 @@ export default () => {
 	const [mspSixWeekFUDate, setMspSixWeekFUDate] = useState("");
 	const [mspSixWeekFUDateCompleted, setMspSixWeekFUDateCompleted] = useState("");
 	const [mspSixWeekFUDateCompletedInitials, setMspSixWeekFUDateCompletedInitials] = useState("");
-	const [mspLetterRecieved, setMspLetterRecieved] = useState("");
+	const [mspLetterRecievedDate, setMspLetterRecievedDate] = useState("");
 	const [mspLetterRecievedInitials, setMspLetterRecievedInitials] = useState("");
 	const [mspFaxedInsurance, setMspFaxedInsurance] = useState("");
 	const [mspFaxedInsuranceInitials, setMspFaxedInsuranceInitials] = useState("");
@@ -150,7 +151,7 @@ export default () => {
 				mspFaxedtoTHHSDate,
 				mspFaxedtoTHHSInitials,
 				mspConfirmedDate,
-				mspConfirmedInitials,
+				mspConfirmedDateInitials,
 				mspDaysFromFaxDate,
 				mspTwoWeekFUDate,
 				mspTwoWeekFUDateCompleted,
